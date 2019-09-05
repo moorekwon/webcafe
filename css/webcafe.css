@@ -1,5 +1,9 @@
 @charset "utf-8";
 
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
 body {
     margin: 0;
 }
@@ -22,7 +26,28 @@ body {
 .main-content {
     background-color: skyblue;
     min-height: 400px;
+    display: flex;
+    justify-content: space-between;
+    padding: 30px;
 }
+
+.group {
+    background-color: yellow;
+}
+
+.group1 {
+    flex-basis: 250px;
+    background-color: orange;
+} 
+
+.group2 {
+    flex-basis: 380px;
+    background-color: lime;
+} 
+
+.group3 {
+    flex-basis: 190px;
+} 
 
 .slogan {
     background-color: orange;
