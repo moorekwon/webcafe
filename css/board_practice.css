@@ -1,0 +1,89 @@
+@charset "utf-8";
+@import url('https://necolas.github.io/normalize.css/latest/normalize.css');
+@import url('https://spoqa.github.io/spoqa-han-sans/css/SpoqaHanSans-kr.css');
+@import url('./fontello.css');
+
+
+/* 초기화 */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* 숨김 콘텐츠 */
+.a11y-hidden,
+legend {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+}
+
+html {
+    font-size: 10px;
+}
+
+body {
+    font-size: 1.4rem;
+    margin: 50px;
+    color: #181818;
+    font-family: 'Spoqa Han Sans', 'Sans-serif';
+    font-weight: 400;
+    background-color: #fff;
+}
+
+/* 탭 UI */
+.board {
+    width: 380px;
+    position: relative;
+}
+
+.tab-list {
+    height: 24px;
+}
+
+.tab-list li {
+    background-color: coral;
+    display: inline-block;
+}
+
+.tab-list li a {
+    border: 1px solid gray;
+    background: gray;
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+    background-image: radial-gradient(#ccc, #fff)
+}
+
+.notice {
+    display: none;
+}
+
+.tab-content-act {
+    display: block;
+}
+
+.icon-dot-circled {
+    list-style: none;
+    display: flex;
+    margin: 5px 0;
+}
+
+.icon-dot-circled time {
+    margin-left: auto;
+}
+
+.more {
+    position: absolute;
+    top: 0;
+    right: 0;
+}
