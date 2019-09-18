@@ -28,6 +28,14 @@ legend {
     white-space: nowrap;
 }
 
+/* clearfix - float 이슈 해결을 위한 선언 */
+/* float -> height를 잃어버리기 때문에 ::after 가상요소를 추가하여 높이 채움 */
+.clearfix::after {
+    content: "";
+    display: block;
+    clear: both;
+}
+
 html {
     font-size: 10px;
 }
@@ -558,14 +566,12 @@ body {
 }
 
 .board li {
-    background: lime;
     margin: 8px 0;
     display: flex;
     /* justify-content: space-between; */
 }
 
 .board li a {
-    background: silver;
     width: 270px;
     /* 'white-space: nowrap' -> 줄바꿈 금지 */
     white-space: nowrap;
@@ -575,12 +581,10 @@ body {
 }
 
 .board time {
-    background: orange;
     margin-left: auto;
 }
 
 .board .more {
-    background: skyblue;
     position: absolute;
     top: 0;
     right: 0;
@@ -662,9 +666,269 @@ body {
 
 /* 신규이벤트 및 관련사이트 */
 .gradient-box {
-    background: yellow;
+    background: #ccc linear-gradient(#ccc, #eee);
+    border: 1px solid #aaa;
+    border-radius: 5px;
 }
- 
+
+.event, .related {
+    margin: 0 10px;
+}
+
+.event {
+    position: relative;
+}
+
+.related {
+    border-top: 1px solid #aaa;
+}
+
+.event-heading, .related-heading, .favorite-heading {
+    margin: 10px 0;
+    font-size: 1.5rem;
+
+}
+
+.point-color {
+    color: #ed8625;
+}
+
+.event p {
+    margin: 10px 0;
+    line-height: 1.5;
+}
+
+.event img {
+    border: 1px solid #aaa;
+    /* box-shadow -> 중앙 정렬에 크기 포함되지 x */
+    box-shadow: 5px 5px 0 0 #aaa;
+}
+
+.event em {
+    font-style: normal;
+}
+
+.btn-event {
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 18px;
+    overflow: hidden;
+}
+
+.btn-event button {
+    background: orange url(./images/back_forward.png) no-repeat;
+    width: 19px;
+    height: 100%;
+    padding: 18px 0 0;
+    border: 0;
+    cursor: pointer;
+}
+
+/* .btn-event button {
+    background-image: url(./images/back_forward.png);
+    background-repeat: no-repeat;
+    background-color: transparent;
+    width: 19px;
+    height: 100%;
+    padding: 18px 0 0;
+    border: 0;
+} */
+
+/* .btn-event button:nth-child(2) {
+    background-position: 100% 0;
+} */
+
+.btn-event-next {
+    background-position: 100% 0 !important;
+}
+
+.related-list {
+    /* 내 방식 */
+    /* list-style-type: none;
+    padding: 0;
+    height: 27px;
+    overflow: hidden;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background: white; */
+    background: white;
+    padding-left: 0;
+    list-style: none;
+    border: 1px solid #aaa;
+    border-radius: 5px;
+    height: 27px;
+    overflow: hidden;
+    transition: height 0.4s 0s, padding 0.4s 0.4s, background 0.4s 0.4s;
+}
+
+.related-list:hover, .related-list:focus {
+    height: 147px;
+    padding: 10px 0;
+    /* background: yellow; */
+}
+
+.related-list li {
+    /* 내 방식 */
+    /* padding: 0 1em;
+    height: 26px;
+    cursor: pointer; */
+    height: 25px;
+    padding: 2px;
+    position: relative;
+}
+
+.related-list a {
+    width: calc(100% - 4px);
+    position: absolute;
+    left: 2px;
+    top: 50%;
+    transform: translateY(-50%);
+    padding: 2px 0 0 1em;
+}
+
+/* favorite site */
+/* 내 방식 */
+/* .favorite {
+    position: relative;
+    margin-top: 20px;
+}
+
+.favorite-heading {
+    background: yellow;
+    margin: 5px;
+}
+
+.favorite-heading span {
+    background: orange;
+}
+
+.favorite-list li:nth-child(1)::before {
+    content: "1";
+}
+
+.favorite-list li:nth-child(2)::before {
+    content: "2";
+}
+
+.favorite-list li:nth-child(3)::before {
+    content: "3";
+}
+
+.favorite-list li:nth-child(4)::before {
+    content: "4";
+}
+
+.favorite-list li:nth-child(n)::before {
+    float: left;
+    width: 10%;
+    text-align: center;
+    background: #aaa;
+    color: white;
+    border-radius: 2px;
+}
+
+.favorite-list a {
+    float: left;
+    width: 70%;
+    background: green;
+}
+
+.favorite-list em {
+    float: right;
+    width: 20%;
+    background: blue;
+}
+
+.favorite-list {
+    background: blue;
+    list-style: none;
+    padding-left: 0;
+    margin: 0;
+}
+
+.favorite-more {
+    background: pink;
+    position: absolute;
+    top: 5px;
+    right: 0;
+} */
+
+.favorite {
+    margin-top: 20px;
+    padding: 0 10px;
+    position: relative;
+}
+
+.favorite-list {
+    padding-left: 0;
+    list-style: none;
+    counter-reset: 0;
+}
+
+.favorite-list li {
+    counter-increment: number;
+    margin: 8px 0;
+    /* display: flex;
+    align-items: center; */
+    position: relative;
+}
+
+.favorite-list li::before {
+    content: counter(number);
+    color: #fff;
+    font-size: 1.2rem;
+    background: #999;
+    border-radius: 3px;
+    padding: 2px 5px;
+    margin-right: 5px;
+    display: inline-block;
+    vertical-align: middle;
+    /* float: left; */
+}
+
+.favorite-list a {
+    /* float: left; */
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.favorite-list em {
+    background: transparent url(./images/rank.png) no-repeat;
+    /* margin-left: auto; */
+    font-style: normal;
+    /* flex item이기 때문에 width, height 값 가질 수 있음 */
+    width: 9px;
+    height: 11px;
+    text-indent: 10px;
+    white-space: nowrap;
+    overflow: hidden;
+    /* float: right; */
+    /* margin-top: 3px; */
+    margin-top: -5px;
+    position: absolute;
+    top: 50%;
+    right: 0;
+}
+
+em.stop {
+    background-position: 0 50%;
+}
+
+em.down {
+    background-position: 0 100%;
+}
+
+.favorite-more {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+}
+
+.favorite-more::before {
+    color: hsla(110, 70%, 20%, 1);
+}
+
 .slogan {
     background-color: orange;
     padding: 15px 0;
