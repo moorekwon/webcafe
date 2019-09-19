@@ -46,7 +46,11 @@ body {
     color: #181818;
     font-family: 'Spoqa Han Sans', 'Sans-serif';
     font-weight: 400;
-    background-color: gray;
+    /* background: url(./images/bg_flower.png) no-repeat 50% 0 scroll,
+    #ccc linear-gradient(#ccc, #eee, #fff) repeat 0 0 scroll; */
+    background: url(./images/bg_flower.png) no-repeat 50% 0 fixed,
+     #ccc linear-gradient(#ccc, #eee, #fff) repeat 0 0 fixed;
+    /* background-size: 940px 382px, 100% 100px; */
 }
 
 .header,
@@ -224,6 +228,9 @@ body {
 .visual {
     height: 120px;
     position: relative;
+    position: relative;
+    top: 0;
+    left: 0;
 }
 
 .visual::before,
@@ -524,15 +531,18 @@ body {
     position: relative;
 }
 
-.board ul, .board .more {
+.board ul,
+.board .more {
     display: none;
 }
 
-.tab-act ul, .tab-act .more {
+.tab-act ul,
+.tab-act .more {
     display: block !important;
 }
 
-.notice-heading, .pds-heading {
+.notice-heading,
+.pds-heading {
     margin: 0;
     font-weight: 400;
     font-size: 1em;
@@ -671,7 +681,8 @@ body {
     border-radius: 5px;
 }
 
-.event, .related {
+.event,
+.related {
     margin: 0 10px;
 }
 
@@ -683,7 +694,9 @@ body {
     border-top: 1px solid #aaa;
 }
 
-.event-heading, .related-heading, .favorite-heading {
+.event-heading,
+.related-heading,
+.favorite-heading {
     margin: 10px 0;
     font-size: 1.5rem;
 
@@ -762,7 +775,8 @@ body {
     transition: height 0.4s 0s, padding 0.4s 0.4s, background 0.4s 0.4s;
 }
 
-.related-list:hover, .related-list:focus {
+.related-list:hover,
+.related-list:focus {
     height: 147px;
     padding: 10px 0;
     /* background: yellow; */
@@ -929,16 +943,224 @@ em.down {
     color: hsla(110, 70%, 20%, 1);
 }
 
-.slogan {
+/* 슬로건 */
+/* 내 방식 */
+/* .slogan {
     background-color: orange;
-    padding: 15px 0;
+    margin: 20px auto;
+    padding: 0;
+    height: 100px;
+    position: relative;
 }
 
-.footer-bg {
-    background-color: silver;
+.slogan-heading::before {
+    background: green url(./images/coffee.png) no-repeat;
+    display: block;
+    width: 110px;
+    height: 83px;
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.slogan-heading {
+    background: yellow;
+    float: left;
+    width: 110px;
+}
+
+.slogan-content {
+    background: blue;
+    line-height: 1.5;
+    float: right;
+    width: 80%;
+    font-size: 1.6rem;
+}
+
+.slogan-content q::before {
+    background: purple;
+    font-size: 3rem;
+}
+
+.slogan-content q::after {
+    background: orange;
+    content: none;
+}
+
+.slogan-content q {
+    background: skyblue;
+}
+
+.slogan-content span {
+    background: white;
+} */
+
+.slogan {
+    padding: 0 100px 15px 30px;
+    position: relative;
+    display: flex;
+    /* justify-content: space-between; */
+    background: #fff;
+}
+
+.slogan-heading {
+    margin: 0;
+    min-width: 110px;
+    height: 83px;
+    font-size: 1.4rem;
+    font-weight: 400;
+    display: flex;
+    text-align: center;
+    line-height: 83px;
+    /* display: flex;
+    justify-content: center;
+    align-items: center; */
+    position: relative;
+    bottom: -30px;
+    /* position: absolute;
+    bottom: -25px;
+    left: 30px; */
+    /* float: left;
+    margin-bottom: -25px; */
+    flex: 0 1 auto;
+    /* margin-bottom: -100px; */
+    margin-right: 25px;
+}
+
+.slogan-heading::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background: url(./images/coffee.png) no-repeat;
+}
+
+.slogan-content {
+    color: #a09784;
+    line-height: 1.5;
+    /* float: right;
+    width: 615px; */
+    margin: 0;
+    flex: 0 1 auto;
+}
+
+.slogan-content q {
+    /* quotes: "[[" "]]" */
+}
+
+.slogan-content q::after {
+    content: "";
+}
+
+.slogan-content q::before {
+    font-size: 3rem;
+    position: relative;
+    top: 10px;
+}
+
+/* 푸터 */
+/* 내 방식 */
+/* .footer-bg { */
+    /* background-color: silver; */
+    /* background: #ccc linear-gradient(#ccc, #eee, #fff) repeat 0 0 scroll;
     padding: 15px 0;
 }
 
 .footer {
-    background-color: yellow;
+    position: relative;
+    padding-left: 30px;
+}
+
+.footer-logo {
+    float: left;
+
+    margin: 30px 20px 0 0;
+}
+
+.guide-list {
+    display: inline-block;
+    border: 1px solid gray;
+    background: gray;
+    border-radius: 5px;
+    padding: 10px;
+    list-style: none;
+    color: #fff;
+    width: 675px;
+    text-align: center;
+    margin-left: 15px;
+}
+
+.guide-list li {
+    display: inline-block;
+    margin: 0 10px;
+}
+.address {
+    font-style: normal;
+    font-size: 1.2rem;
+    margin-left: 130px;
+}
+
+.copyright {
+    font-size: 1.2rem;
+    display: block;
+    margin-left: 130px;
+}
+
+.badge img:nth-child(1) {
+    position: absolute;
+    top: 10px;
+    right: 45px;
+}
+
+.badge img:nth-child(2) {
+    position: absolute;
+    top: 10px;
+    right: 0px;
+} */
+
+/* 푸터 */
+.footer {
+    position: relative;
+    padding: 0 100px 0 150px;
+}
+
+/* 푸터 로고 */
+.footer-logo {
+    position: absolute;
+    top: 20px;
+    left: 35px;
+}
+
+/* 가이드 링크 모음 */
+.guide-list {
+    background: #7b8385;
+    color: #fff;
+    padding-left: 0;
+    margin: 0;
+    list-style: none;
+    display: flex;
+    justify-content: space-around;
+    border-radius: 5px;
+}
+
+.guide-list a {
+    display: block;
+    padding: 8px 10px;
+    text-transform: uppercase;
+}
+
+/* 연락처 정보 */
+.address {
+    font-style: normal;
+    margin: 10px 0 5px;
+}
+
+/* 기술 로고 */
+.badge {
+    position: absolute;
+    top: 0;
+    right: 0;
 }
