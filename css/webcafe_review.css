@@ -1,0 +1,61 @@
+@charset "utf-8";
+
+/* 초기화 */
+*, *::before, *::after {
+    box-sizing: border-box;
+    font-size: 10px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+/* header */
+.header {
+    background: yellow;
+    width: 940px;
+    margin: 0 auto;
+    padding: 0 30px 50px 30px;
+    border-radius: 0 0 15px 15px;
+    position: relative;
+}
+
+/* logo */
+.logo {
+    background: yellowgreen;
+    position: absolute;
+    top: 45px;
+    left: 70px;
+}
+
+.logo a {
+    background: crimson;
+}
+
+.logo a img {
+    background: darkblue;
+}
+
+/* member */
+.member {
+    background: blue;
+    padding: 2px 0;
+    text-align: right;
+    font-size: 0;
+}
+
+.member li {
+    background: skyblue;
+    display: inline-block;
+    font-size: 1.4rem;
+    text-transform: uppercase;
+}
+
+.member li a {
+    background: blueviolet;
+}
+
+.member li:nth-child(n + 2) a::before {
+    content: ':';
+}
+
+/* nav */
