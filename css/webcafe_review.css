@@ -29,7 +29,8 @@ a {
 }
 
 /* 숨김텍스트 */
-.a11y-hidden {
+.a11y-hidden,
+legend {
     position: absolute;
     clip: rect(0, 0, 0, 0);
 }
@@ -194,3 +195,102 @@ a {
 }
 
 /* main */
+.main {
+    background: #fff;
+    border-radius: 15px 15px 0 0;
+    padding: 30px;
+    display: flex;
+    justify-content: space-between;
+    min-height: 400px;
+}
+
+.group {
+    background: yellow;
+}
+
+.group1 {
+    background: gray;
+    flex-basis: 250px;
+}
+
+.group2 {
+
+}
+
+.group3 {
+
+}
+
+/* main - login */
+.login {
+    background: #ed8625 radial-gradient(circle at right top, #f7cc31, #ed8625);
+    border-radius: 5px;
+    box-shadow: 5px 5px 0 0 #666;
+    padding: 10px;
+}
+
+.login-heading {
+    color: #ff0;
+    text-indent: 10px;
+    font-size: 1.5em;
+}
+
+.login-form {
+    background: #fff;
+    margin-top: 10px;
+    padding: 10px 10px 0 10px;
+    border-radius: 5px 5px 0 0;
+    font-size: 1.4em;
+}
+
+.login-form fieldset {
+    border: 0;
+    padding: 0 0 10px 0;
+    border-bottom: 1px solid #aaa;
+    position: relative;
+}
+
+.login-form fieldset label {
+    display: inline-block;
+    width: 4em;
+    cursor: pointer;
+}
+
+.login-form fieldset input {
+    width: 90px;
+    height: 22px;
+    border: 1px solid #aaa;
+    padding: 1px 1px 1px 5px;
+}
+
+.login-form fieldset .user-pwd {
+    margin-top: 6px;
+}
+
+.login-form fieldset .login-btn {
+    background: #f7cc31;
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 50px;
+    height: 50px;
+    border: 1px solid #ed8625;
+    border-radius: 3px;
+    color: #fff;
+    font: inherit;
+}
+
+.login-account {
+    background: #fff;
+    border-radius: 0 0 5px 5px;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    font-size: 1.3em;
+}
+
+.login-account li::before {
+    color: #ed8625;
+}
+
+/* main - validation */
